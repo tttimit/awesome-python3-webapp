@@ -1,7 +1,8 @@
 ' 有了ORM，就可以把我们的web app需要的3个表用Model表示出来 '
-import time, uuid
+import time
+import uuid
 
-from orm import Model, StringFiedl, BooleanField, FloatField, TextField
+from www.orm import Model, BooleanField, FloatField, TextField
 
 def next_id():
     return '%015d%s000' % (int(time.time() * 1000), uuid.uuid4().hex)
