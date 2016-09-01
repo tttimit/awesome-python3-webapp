@@ -241,6 +241,12 @@ class Model(dict, metaclass=ModelMetaclass):
 
 class Field(object):
     def __init__(self, name, column_type, primary_key, default):
+        '''
+        :type name: 属性名
+        :type column_type: 属性的类型，比如字符串或者整数
+        :type primary_key: boolean 是否是主键
+        :type default: 默认属性
+        '''
         self.name = name
         self.column_type = column_type
         self.primary_key = primary_key
