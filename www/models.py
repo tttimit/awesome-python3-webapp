@@ -2,7 +2,9 @@
 import time
 import uuid
 
-from www.orm import Model, BooleanField, FloatField, TextField
+from www.my_orm import Model, StringField, BooleanField, FloatField, TextField
+
+
 
 def next_id():
     return '%015d%s000' % (int(time.time() * 1000), uuid.uuid4().hex)

@@ -9,8 +9,8 @@ from aiohttp import web
 import logging
 from jinja2 import Environment, FileSystemLoader
 
-from www import orm
-from www.coreweb import add_routes, add_static
+import orm
+from coreweb import add_routes, add_static
 
 logging.basicConfig(level=logging.INFO)
 

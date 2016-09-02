@@ -1,5 +1,5 @@
 # config.py
-from conf import config_default
+from www import config_default
 
 configs = config_default.configs
 

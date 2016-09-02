@@ -3,10 +3,6 @@ import logging
 
 import aiomysql
 
-from www.orm import Model, StringField, IntegerField
-
-__pool
-
 
 def log(sql, args=()):
     logging.info('SQL: %s' % sql)
@@ -19,9 +15,9 @@ def create_pool(loop, **kw):
     __pool = yield from aiomysql.create_pool(
         host=kw.get('host', 'localhost'),
         port=kw.get('port', 3306),
-        user=kw.get['user'],
+        user=kw['user'],
         password=kw['password'],
-        db=kw['db'],
+        db=kw['database'],
         charset=kw.get('charset', 'utf-8'),  # 默认编码为 utf-8
         autocommit=kw.get('autocommit', True),  # 自动提交事务
         maxsize=kw.get('maxsize', 10),
@@ -267,7 +263,7 @@ class BooleanField(Field):
 
 
 class IntegerField(Field):
-    def __init__(self, name=None, primary_key=False, defalut=0):
+    def __init__(self, name=None, primary_key=False, default=0):
         super().__init__(name, 'bigint', primary_key, default)
 
 
